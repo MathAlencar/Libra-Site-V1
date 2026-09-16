@@ -1,0 +1,13 @@
+class="quote"><span class="mark">"</span><blockquote class="serif">Dentre as modalidades que haviam no mercado, optei por fechar com a Libra justamente pelo excelente atendimento e taxas competitivas. Recebi toda a assistência necessária e fiquei bastante satisfeito.</blockquote><div class="who"><b>José Augusto Félix</b><span>Guarulhos - SP<br></span></div></div></div></div>
+        <div class="slide"><div class="tgrid"><div><div class="ph"><div class="fb" style="display: none;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg>Foto de cliente real</div><img src="[DATA]
+====
+class="quote"><span class="mark">"</span><blockquote class="serif">A primeira comunicação foi ótima e os consultores também! Fiz cotação com outras empresas, mas o valor que a Libra liberou foi maior, as condições de pagamento e taxa de juros foram melhores.&nbsp;</blockquote><div class="who"><b>Emanuela Cristina Presenti</b><span>Curitiba - PR</span></div></div></div></div>
+        <div class="slide"><div class="tgrid"><div><div class="ph"><div class="fb" style="display: none;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg>Foto de cliente real</div><img src="[DATA]
+====
+class="quote"><span class="mark">"</span><blockquote class="serif">Busquei o crédito pensando na melhoria da minha empresa, para poder melhorar a capacidade. A Libra foi a melhor empresa que encontrei em relação a atendimento e facilidade no contrato.</blockquote><div class="who"><b>Jorge Gaulke</b><span>Pindamonhangaba - SP</span></div></div></div></div>
+      </div>
+    </div>
+    <div class="cnav">
+      <button class="cbtn" id="cprev" aria-label="Depoimento anterior">‹</button>
+      <div class="cdots" id="cdots"><button class="cdot" aria-label="Ir para depoimento 1"></button><button class="cdot active" aria-label="Ir para depoimento 2"></button><button class="cdot" aria-label="Ir para depoimento 3"></button></div>
+      <button class="cbtn" id="cnext" aria-label="Próximo depoimento">›

@@ -5,6 +5,7 @@ export const ROUTES = {
   A_LIBRA: '/a-libra',
   PARCEIROS: '/parceiros',
   BLOG: '/blog',
+  BLOG_ARTICLE: '/blog/:slug',
   SIMULACAO: '/simulacao',
   POLITICA_PRIVACIDADE: '/politica-de-privacidade',
   POLITICA_COOKIES: '/politica-de-cookies',
@@ -12,3 +13,7 @@ export const ROUTES = {
 } as const
 
 export type RoutePath = (typeof ROUTES)[keyof typeof ROUTES]
+
+export function blogArticlePath(slug: string) {
+  return `/blog/${slug}`
+}

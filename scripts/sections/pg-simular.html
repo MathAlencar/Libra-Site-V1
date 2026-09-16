@@ -1,0 +1,124 @@
+<main id="pg-simular" class="page" hidden="">
+969:  <section class="sec sec--cream" style="padding-top:150px"><div class="wrap">
+970:    <div class="wiz">
+971:      <div class="wleft">
+972:[LONG 420]         <div class="wbadge"><svg width="34" height="22" viewBox="0 0 46 28" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="19" r...
+973:        <div id="wl-1" class="wpane on">
+974:          <div class="wstepn">Passo 1/4</div>
+975:          <h1>Simule um <span class="em">crédito</span> com seu imóvel em garantia.</h1>
+976:          <p>Sua casa abre portas pra um crédito de verdade justo. Leva 2 minutos, é grátis e não afeta o seu score.</p>
+977:        </div>
+978:        <div id="wl-2" class="wpane">
+979:          <div class="wstepn">Passo 2/4</div>
+980:          <h1>Agora, sobre o seu <span class="em">imóvel</span>.</h1>
+981:          <p>É ele que garante as menores taxas do mercado. Digite o CEP que a gente encontra o endereço pra você.</p>
+982:        </div>
+983:        <div id="wl-3" class="wpane">
+984:          <div class="wstepn">Passo 3/4</div>
+985:          <h1>Vamos falar de <span class="em">valores</span>.</h1>
+986:          <p>Crédito de até 50% do valor do imóvel, em até 180 meses, com taxa a partir de 1,19% ao mês + IPCA.</p>
+987:        </div>
+988:        <div id="wl-4" class="wpane">
+989:          <div class="wstepn">Passo 4/4</div>
+990:          <h1>Última etapa, <span class="em">prometemos</span>.</h1>
+991:          <p>Seus dados pra enviarmos a proposta — e você escolhe se quer atendimento automático ou humano.</p>
+992:        </div>
+993:        <div class="wprog"><i id="wp-1" class="on"></i><i id="wp-2"></i><i id="wp-3"></i><i id="wp-4"></i></div>
+994:      </div>
+995:
+996:      <div class="wright">
+997:        <!-- PASSO 1: urgência -->
+998:        <div id="ws-1" class="wpane on">
+999:          <div class="wq">Pra quando você precisa do dinheiro?</div>
+1000:          <div class="wqd">Isso ajuda a gente a te atender no ritmo certo.</div>
+1001:          <div class="opts" id="urg-opts">
+1002:            <div class="opt" data-urg="imediata" role="button" tabindex="0"><span>Pra ontem<small>É urgente, quanto antes melhor</small></span><span class="rad"></span></div>
+1003:            <div class="opt" data-urg="semanas" role="button" tabindex="0"><span>Nas próximas semanas<small>Tenho um plano em andamento</small></span><span class="rad"></span></div>
+1004:            <div class="opt" data-urg="meses" role="button" tabindex="0"><span>Nos próximos meses<small>Estou me organizando com calma</small></span><span class="rad"></span></div>
+1005:            <div class="opt" data-urg="pesquisando" role="button" tabindex="0"><span>Ainda estou só pesquisando<small>Quero entender se faz sentido</small></span><span class="rad"></span></div>
+1006:          </div>
+1007:          <div class="wnav"><a class="btn btn-blue dis" id="wn-1" href="#">Continuar <span class="ar">→</span></a></div>
+1008:        </div>
+1009:
+1010:        <!-- PASSO 2: imóvel -->
+1011:        <div id="ws-2" class="wpane">
+1012:          <div class="wq">Onde fica e quanto vale o imóvel?</div>
+1013:          <div class="wqd">Digite o CEP e complete só o número.</div>
+1014:          <div class="fgrid">
+1015:            <div class="fcard"><label>Valor do seu imóvel</label><input class="js-money" id="sim-imovel" inputmode="numeric" placeholder="R$ 400.000"></div>
+1016:            <div class="fcard"><label>CEP do imóvel</label><input id="sim-cep" inputmode="numeric" maxlength="9" placeholder="14000-000"></div>
+1017:            <div class="full whint" id="cep-status" style="margin:-4px 0 0"></div>
+1018:            <div class="fcard full"><label>Endereço</label><input id="sim-rua" type="text" placeholder="Preenchido pelo CEP" readonly=""></div>
+1019:            <div class="fcard"><label>Bairro</label><input id="sim-bairro" type="text" placeholder="—" readonly=""></div>
+1020:            <div class="fcard"><label>Cidade / UF</label><input id="sim-cidade" type="text" placeholder="—" readonly=""></div>
+1021:            <div class="fcard"><label>Número</label><input id="sim-numero" inputmode="numeric" placeholder="123"></div>
+1022:            <div class="fcard"><label>Complemento (opcional)</label><input type="text" placeholder="Apto, bloco…"></div>
+1023:            <div class="fcard"><label>O imóvel tem financiamento em aberto?</label><select id="sim-fin"><option value="nao" selected="">Não, está quitado</option><option value="sim">Sim, ainda pago financiamento</option></select></div>
+1024:            <div class="fcard" id="wrap-saldo" style="display:none"><label>Saldo devedor aproximado</label><input class="js-money" id="sim-saldo" inputmode="numeric" placeholder="R$ 80.000"></div>
+1025:          </div>
+1026:          <div class="simneg" id="simneg" style="display: none;">
+1027:            <b>Poxa, por enquanto não conseguimos seguir.</b>
+1028:            Pelo valor informado, o saldo do financiamento fica grande demais pra essa operação: a quitação pode representar no máximo 60% do crédito, e o crédito vai até 50% do valor do imóvel. Quando o saldo devedor diminuir, vai ser um prazer refazer a simulação com você.
+1029:          </div>
+1030:          <div class="simneg" id="simmin" style="display: none;">
+1031:            <b>Poxa, com esse valor ainda não dá.</b>
+1032:            Trabalhamos com imóveis a partir de R$ 200 mil. Se o seu imóvel vale mais do que o valor digitado, é só ajustar ali em cima que a gente segue com a sua simulação.
+1033:          </div>
+1034:          <div class="wnav"><a class="btn btn-ghost-d" data-wgo="1" href="#">← Voltar</a><a class="btn btn-blue dis" id="wn-2" href="#">Continuar <span class="ar">→</span></a></div>
+1035:        </div>
+1036:
+1037:        <!-- PASSO 3: valores -->
+1038:        <div id="ws-3" class="wpane">
+1039:          <div class="wq">De quanto você precisa?</div>
+1040:          <div class="wqd">A gente já ajusta ao limite do seu imóvel, se precisar.</div>
+1041:          <div class="fgrid">
+1042:            <div class="fcard"><label>Quanto você precisa?</label><input class="js-money" id="sim-amount" inputmode="numeric" placeholder="R$ 100.000"></div>
+1043:            <div class="fcard"><label>Em quantos meses?</label><select id="sim-prazo"><option value="60">60 meses</option><option value="120" selected="">120 meses</option><option value="180">180 meses</option></select></div>
+1044:            <div class="fcard full"><label>Valor final do crédito (ajustado ao limite)</label><input class="js-money" id="sim-final" inputmode="numeric" placeholder="—"></div>
+1045:            <div class="full whint" id="final-hint" style="margin:-4px 0 0"></div>
+1046:          </div>
+1047:          <div class="west">
+1048:            <div class="systog" id="sys-toggle" role="tablist" aria-label="Sistema de amortização">
+1049:              <button type="button" class="sysopt on" data-sys="price" role="tab" aria-selected="true">Parcelas fixas<small>Price</small></button>
+1050:              <button type="button" class="sysopt" data-sys="sac" role="tab" aria-selected="false">Parcelas que caem<small>SAC</small></button>
+1051:            </div>
+1052:            <div class="simr-label" id="sim-parcela-label">Parcela a partir de</div>
+1053:            <div class="simr-value" id="sim-parcela">—</div>
+1054:            <div class="sac-evo" id="sac-evo" hidden="">
+1055:              <div class="sev"><span>1ª parcela</span><b id="sac-p1">—</b></div>
+1056:              <div class="sev"><span id="sac-lm">na metade</span><b id="sac-pm">—</b></div>
+1057:              <div class="sev gd"><span id="sac-lf">última</span><b id="sac-pf">—</b></div>
+1058:            </div><div class="simr-label" style="margin-top:16px">Renda necessária</div><div class="simr-value" id="sim-renda" style="font-size:30px">—</div>
+1059:            <div class="simrows">
+1060:              <div class="simr-row"><span>Limite pelo imóvel (50%)</span><b id="r-limite">—</b></div>
+1061:              <div class="simr-row" id="row-saldo" style="display:none"><span>(−) Quitação do financiamento</span><b id="r-saldo">—</b></div>
+1062:              <div class="simr-row"><span>Líquido pra você</span><b id="r-disp">—</b></div><div class="simr-row"><span>(+) Custas, impostos, seguros e avaliação</span><b id="r-custas">—</b></div>
+1063:            </div>
+1064:[LONG 472]             <div class="simr-note" style="margin-top:14px">Parcelas calculadas pelo sistema <span id="note-sys">Price (parcelas fixas)</span>, com taxa a partir de 1,19% ao mês + IPCA. Já inclusos IOF...
+1065:          </div>
+1066:          <div class="wnav"><a class="btn btn-ghost-d" data-wgo="2" href="#">← Voltar</a><a class="btn btn-blue dis" id="wn-3" href="#">Continuar <span class="ar">→</span></a></div>
+1067:        </div>
+1068:
+1069:        <!-- PASSO 4: dados -->
+1070:        <div id="ws-4" class="wpane">
+1071:          <div class="wq">Pra quem enviamos a proposta?</div>
+1072:          <div class="wqd">Só a sua proposta e o contato do jeito que você preferir.</div>
+1073:          <div class="fgrid">
+1074:            <div class="fcard full"><label>Nome completo</label><input type="text" id="sim-nome" placeholder="Seu nome"></div>
+1075:            <div class="fcard"><label>Telefone / WhatsApp</label><input type="tel" id="sim-tel" inputmode="numeric" maxlength="15" placeholder="(16) 90000-0000"></div>
+1076:            <div class="fcard"><label>E-mail</label><input type="email" id="sim-email" placeholder="voce@email.com"></div>
+1077:            <div class="full whint warn" id="sim-msg" hidden="" style="margin:-4px 0 0">Confere os campos destacados? Assim a proposta chega certinha pra você. 🙂</div>
+1078:          </div>
+1079:          <ul class="simr-list" style="border:none;padding-top:8px;margin-top:14px">
+1080:            <li style="color:var(--ink)">Sem custo pra simular</li>
+1081:            <li style="color:var(--ink)">Não afeta o seu score</li>
+1082:            <li style="color:var(--ink)">Atendimento do seu jeito, humano ou automático</li>
+1083:          </ul>
+1084:          <div class="wnav"><a class="btn btn-ghost-d" data-wgo="3" href="#">← Voltar</a><a class="btn btn-gold" id="sim-cta" href="#">Ver minha proposta <span class="ar">→</span></a></div>
+1085:        </div>
+1086:      </div>
+1087:    </div>
+1088:  </div></section>
+1089:</main>
+1090:
+1091:

@@ -1,0 +1,9 @@
+.polrow{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+  .polrow .btn{flex:1;justify-content:center}
+  .artbody ol{margin:0 0 22px 22px}
+  .doc-reedit{display:none;margin-top:30px;font-size:13px}
+  body.editing .doc-reedit{display:block}
+  .doc-reedit a{color:var(--blue);font-weight:600;border-bottom:1px dashed var(--line);padding-bottom:1px}
+  .about-stats .s .apde{display:block;font-style:normal;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-light);margin-bottom:7px}
+  @media (max-width:640px){.about-stats .s .apde{font-size:10.5px;letter-spacing:.1em}}
+  .mail-toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(8px);background:var(--navy);color:var(--cream);border:1px solid rgba(246,241,230,.18);border-

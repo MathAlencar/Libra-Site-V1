@@ -1,0 +1,4 @@
+
+W0: <b>José Augusto Félix</b><span>Guarulhos - SP<br></span>
+W1: <b>Emanuela Cristina Presenti</b><span>Curitiba - PR</span>
+W2: <b>Jorge Gaulke</b><span>Pindamonhangaba - SP</span>

@@ -1,2 +1,1 @@
-/** Utilitários gerais. */
-export {}
+export { cn } from '@/lib/utils/cn'

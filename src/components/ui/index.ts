@@ -1,2 +1,6 @@
-/** Componentes de UI reutilizáveis. */
-export {}
+export { Button } from '@/components/ui/Button'
+export { Eyebrow } from '@/components/ui/Eyebrow'
+export { PageHero } from '@/components/ui/PageHero'
+export { Photo } from '@/components/ui/Photo'
+export { Section } from '@/components/ui/Section'
+export { Wrap } from '@/components/ui/Wrap'

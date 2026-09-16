@@ -1,5 +1,6 @@
 export { AdminPage } from '@/pages/AdminPage'
 export { ALibraPage } from '@/pages/ALibraPage'
+export { BlogArticlePage } from '@/pages/BlogArticlePage'
 export { BlogPage } from '@/pages/BlogPage'
 export { ComoFuncionaPage } from '@/pages/ComoFuncionaPage'
 export { HomePage } from '@/pages/HomePage'

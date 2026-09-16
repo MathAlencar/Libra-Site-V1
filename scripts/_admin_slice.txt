@@ -1,0 +1,652 @@
+
+===== 598-660 =====
+598:<style data-admin="">
+599:  /* ===== painel admin (removido na exportação de produção) ===== */
+600:  #editbar .b-adm{background:#e6a83c;color:#0b1f3f}
+601:  .adm-hero{padding:150px 0 40px}
+602:  .adm-hero h1{font-size:clamp(34px,4.5vw,52px)}
+603:  .adm-hero p{color:var(--muted);margin-top:10px;max-width:44em}
+604:  .adm-tabs{display:flex;gap:10px;margin:26px 0 0;flex-wrap:wrap}
+605:  .adm-tab{font-family:inherit;font-size:14.5px;font-weight:700;border:1.6px solid var(--line);background:#fff;color:var(--ink);border-radius:100px;padding:11px 22px;cursor:pointer;transition:all .15s ease}
+606:  .adm-tab.on{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+607:  .adm-pane{display:none;padding:34px 0 80px}
+608:  .adm-pane.on{display:block}
+609:  .adm-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px;margin-bottom:22px}
+610:  .adm-card h3{font-family:"Instrument Serif",serif;font-size:24px;font-weight:500;margin-bottom:6px}
+611:  .adm-card .hint{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+612:  .adm-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+613:  .adm-grid .full{grid-column:1/-1}
+614:  .adm-field label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+615:  .adm-field input,.adm-field select,.adm-field textarea{width:100%;border:1.6px solid var(--line);border-radius:12px;padding:13px 15px;font-family:"Instrument Sans",sans-serif;font-size:16px;color:var(--ink);background:#fff}
+616:  .adm-field textarea{min-height:220px;resize:vertical;line-height:1.6}
+617:  .adm-field input:focus,.adm-field select:focus,.adm-field textarea:focus{border-color:var(--blue);outline:none}
+618:  .adm-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+619:  .adm-msg{font-size:14px;font-weight:600;margin-top:14px;color:var(--blue)}
+620:  .adm-msg.err{color:#a33}
+621:  .adm-list{display:flex;flex-direction:column;gap:10px}
+622:  .adm-item{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:14px;padding:13px 16px;background:var(--cream)}
+623:  .adm-item .cat-pill{background:var(--gold);color:var(--navy);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:100px;white-space:nowrap}
+624:  .adm-item .ttl{flex:1;font-weight:600;font-size:15px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+625:  .adm-item .st{font-size:12px;font-weight:700;color:var(--muted)}
+626:  .adm-item button{font-family:inherit;font-size:13px;font-weight:700;border:1.4px solid var(--line);background:#fff;border-radius:100px;padding:7px 14px;cursor:pointer;white-space:nowrap}
+627:  .adm-item button:hover{border-color:var(--navy)}
+628:  .adm-item button.danger:hover{border-color:#a33;color:#a33}
+629:  .adm-table{width:100%;border-collapse:collapse;font-size:14px}
+630:  .adm-table th{text-align:left;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:1.6px solid var(--line)}
+631:  .adm-table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+632:  .adm-table tr:last-child td{border-bottom:none}
+633:  .adm-empty{padding:26px;text-align:center;color:var(--muted);font-size:14.5px;border:1.6px dashed var(--line);border-radius:14px}
+634:  .adm-kpis{display:flex;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+635:  .adm-kpi{flex:1;min-width:150px;background:var(--navy);color:var(--cream);border-radius:16px;padding:20px 22px}
+636:  .adm-kpi b{display:block;font-family:"Instrument Serif",serif;font-size:34px;font-weight:500;color:var(--gold)}
+637:  .adm-kpi span{font-size:12.5px;color:var(--muted-light)}
+638:  .adm-code{background:var(--navy);color:var(--cream);border-radius:14px;padding:18px 20px;font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.6;overflow-x:auto;white-space:pre;margin-top:12px}
+639:  .adm-note{font-size:13.5px;color:var(--muted);line-height:1.7;margin-top:12px}
+640:  .adm-note b{color:var(--ink)}
+641:  @media (max-width:720px){.adm-grid{grid-template-columns:1fr}.adm-card{padding:22px 18px}.adm-table{font-size:13px}.adm-table th,.adm-table td{padding:8px}}
+642:</style>
+643:</head>
+644:<body class="">
+645:<noscript>
+646:  <div style="position:sticky;top:0;z-index:999;background:#0b1f3f;color:#f6f1e6;padding:14px 22px;text-align:center;font-family:-apple-system,'Segoe UI',sans-serif;font-size:14.5px;line-height:1.55;border-bottom:2px solid #e6a83c">
+647:    Para navegar pelo site e simular o seu crédito, ative o JavaScript no seu navegador.
+648:  </div>
+649:</noscript>
+650:
+651:<div id="editbar" data-admin="">
+652:  <span class="lbl" id="editlbl">Modo de edição</span>
+653:  <button class="b-adm" id="btnAdmin" data-page="admin">Painel</button>
+654:  <button class="b-edit" id="btnEdit">Editar página</button>
+655:  <button class="b-done" id="btnDone">Concluir</button>
+656:  <button class="b-vid" id="btnVid">Vídeo</button><button class="b-exp" id="btnExport">Salvar admin</button>
+657:</div>
+658:<input type="file" id="imgInput" accept="image/*" style="display:none" aria-hidden="true" data-admin="">
+659:<input type="file" id="vidInput" accept="video/mp4,video/webm" style="display:none" aria-hidden="true" data-admin="">
+660:
+
+===== 1385-1480 =====
+1385:<main id="pg-admin" class="page" data-admin="" hidden="">
+1386:  <section class="adm-hero"><div class="wrap">
+1387:    <span class="eyebrow">Área interna</span>
+1388:    <h1 class="serif">Painel da Libra.</h1>
+1389:    <p>Publique posts no blog, acompanhe simulações e cadastros de parceiros, e exporte a versão pública do site. Nada daqui aparece na versão de produção.</p>
+1390:    <div class="adm-tabs">
+1391:      <button class="adm-tab on" data-admtab="blog">Blog</button>
+1392:      <button class="adm-tab" data-admtab="leads">Simulações &amp; Parceiros</button>
+1393:      <button class="adm-tab" data-admtab="export">Exportar &amp; Configurar</button>
+1394:    </div>
+1395:  </div></section>
+1396:
+1397:  <section class="adm-pane on" id="admp-blog"><div class="wrap">
+1398:    <div class="adm-card">
+1399:      <h3>Novo post</h3>
+1400:      <p class="hint">Escreva em texto puro: títulos curtos viram seções, linhas começando com “-” viram listas. A formatação segue o padrão editorial do site automaticamente.</p>
+1401:      <div class="adm-grid">
+1402:        <div class="adm-field"><label>Título</label><input id="bp-titulo" type="text" placeholder="Ex.: Consórcio ou home equity?"></div>
+1403:        <div class="adm-field"><label>Categoria</label><input id="bp-cat" type="text" placeholder="Ex.: Guia" list="bp-cats"><datalist id="bp-cats"><option>Guia</option><option>Dívidas</option><option>Segurança</option><option>Negócios</option><option>Casa</option><option>Educação</option></datalist></div>
+1404:        <div class="adm-field full"><label>Resumo (aparece no card do blog)</label><input id="bp-resumo" type="text" placeholder="Uma frase que convida a ler."></div>
+1405:        <div class="adm-field full"><label>Subtítulo (abertura do artigo)</label><input id="bp-sub" type="text" placeholder="Uma linha de contexto logo abaixo do título."></div>
+1406:        <div class="adm-field"><label>Tempo de leitura</label><input id="bp-leitura" type="text" placeholder="Ex.: 4 min" value="4 min"></div>
+1407:        <div class="adm-field"><label>Imagem do card (opcional)</label><input id="bp-img" type="file" accept="image/*"></div>
+1408:        <div class="adm-field full"><label>Conteúdo</label><textarea id="bp-corpo" placeholder="Cole ou escreva o texto do artigo aqui…"></textarea></div>
+1409:      </div>
+1410:      <div class="adm-actions">
+1411:        <a class="btn btn-blue" href="#" id="bp-publicar">Publicar no blog <span class="ar">→</span></a>
+1412:        <a class="btn btn-ghost-d" href="#" data-page="blog">Ver o blog</a>
+1413:      </div>
+1414:      <p class="adm-msg" id="bp-msg" hidden=""></p>
+1415:    </div>
+1416:    <div class="adm-card">
+1417:      <h3>Posts do blog</h3>
+1418:      <p class="hint">Publicar/ocultar controla o que aparece no blog público. Pra guardar as mudanças no arquivo, use “Salvar admin” na barra preta.</p>
+1419:      <div class="adm-list" id="bp-lista"></div>
+1420:    </div>
+1421:  </div></section>
+1422:
+1423:  <section class="adm-pane" id="admp-leads"><div class="wrap">
+1424:    <div class="adm-kpis">
+1425:      <div class="adm-kpi"><b id="lk-sim">0</b><span>Simulações</span></div>
+1426:      <div class="adm-kpi"><b id="lk-par">0</b><span>Parceiros</span></div>
+1427:      <div class="adm-kpi"><b id="lk-hoje">0</b><span>Hoje</span></div>
+1428:    </div>
+1429:    <div class="adm-card">
+1430:      <h3>Últimas simulações</h3>
+1431:      <p class="hint">Capturadas quando alguém conclui o passo 4 do simulador.</p>
+1432:      <div style="overflow-x:auto"><table class="adm-table"><thead><tr><th>Quando</th><th>Nome</th><th>Contato</th><th>Imóvel</th><th>Crédito</th><th>Prazo</th><th>Parcela</th><th>Cidade</th></tr></thead><tbody id="lt-sim"></tbody></table></div>
+1433:      <div class="adm-empty" id="le-sim">Nenhuma simulação por aqui ainda.</div>
+1434:    </div>
+1435:    <div class="adm-card">
+1436:      <h3>Últimos cadastros de parceiros</h3>
+1437:      <div style="overflow-x:auto"><table class="adm-table"><thead><tr><th>Quando</th><th>Nome</th><th>Contato</th><th>Tipo</th><th>Cidade</th></tr></thead><tbody id="lt-par"></tbody></table></div>
+1438:      <div class="adm-empty" id="le-par">Nenhum cadastro por aqui ainda.</div>
+1439:    </div>
+1440:    <div class="adm-actions">
+1441:      <a class="btn btn-blue" href="#" id="ld-atualizar">Buscar do servidor <span class="ar">→</span></a>
+1442:      <a class="btn btn-ghost-d" href="#" id="ld-csv">Baixar CSV</a>
+1443:      <a class="btn btn-ghost-d" href="#" id="ld-limpar">Limpar registros locais</a>
+1444:    </div>
+1445:    <p class="adm-msg" id="ld-msg" hidden=""></p>
+1446:[LONG 383]     <p class="adm-note"><b>Como funciona:</b> registros feitos neste navegador ficam salvos aqui automaticamente (bom pra testar). Pra receber os leads dos visitantes do site publicado, configure o endereço de captura na
+1447:  </div></section>
+1448:
+1449:  <section class="adm-pane" id="admp-export"><div class="wrap">
+1450:    <div class="adm-card">
+1451:      <h3>Exportar site de produção</h3>
+1452:      <p class="hint">Gera o arquivo público: sem editor, sem painel, com título e descrição de SEO — pronto pra subir no servidor.</p>
+1453:      <div class="adm-actions"><a class="btn btn-gold" href="#" id="ex-prod">Baixar site de produção <span class="ar">→</span></a></div>
+1454:      <p class="adm-msg" id="ex-msg" hidden=""></p>
+1455:    </div>
+1456:    <div class="adm-card">
+1457:      <h3>Endereço de captura de leads</h3>
+1458:      <p class="hint">URL que recebe as simulações e cadastros do site publicado (e de onde o painel busca a lista).</p>
+1459:      <div class="adm-field"><label>URL do endpoint</label><input id="cfg-endpoint" type="url" placeholder="https://script.google.com/macros/s/…/exec"></div>
+1460:      <div class="adm-actions"><a class="btn btn-blue" href="#" id="cfg-salvar">Salvar endereço</a></div>
+1461:      <p class="adm-msg" id="cfg-msg" hidden=""></p>
+1462:      <p class="adm-note"><b>Sugestão gratuita (Google Planilhas):</b> crie uma planilha, abra Extensões → Apps Script, cole o código abaixo, publique como App da Web (executar como você, acesso: qualquer pessoa) e cole a URL gerada aqui. Cada lead vira uma linha na planilha.</p>
+1463:      <div class="adm-code">function doPost(e){
+1464:  var s=SpreadsheetApp.getActive().getSheets()[0];
+1465:  var d=JSON.parse(e.postData.contents);
+1466:  s.appendRow([new Date(), d.tipo, JSON.stringify(d.dados)]);
+1467:  return ContentService.createTextOutput('ok');
+1468:}
+1469:function doGet(e){
+1470:  var s=SpreadsheetApp.getActive().getSheets()[0];
+1471:  var rows=s.getDataRange().getValues().map(function(r){
+1472:    return {quando:r[0], tipo:r[1], dados:JSON.parse(r[2]||'{}')};
+1473:  });
+1474:  return ContentService.createTextOutput(JSON.stringify(rows))
+1475:    .setMimeType(ContentService.MimeType.JSON);
+1476:}</div>
+1477:    </div>
+1478:  </div></section>
+1479:</main>
+1480:
+
+===== 1570-1650 =====
+1570:<script data-admin="">
+1571:(function(){
+1572:  var body=document.body;
+1573:  var btnEdit=document.getElementById('btnEdit');
+1574:  var btnDone=document.getElementById('btnDone');
+1575:  var btnExport=document.getElementById('btnExport');
+1576:  var editlbl=document.getElementById('editlbl');
+1577:  var imgInput=document.getElementById('imgInput');
+1578:  var SEL='h1,h2,h3,p,blockquote,.eyebrow,.chip small,.chip b,.cmp small,.cmp .big,.cmp .u,.cmp-meta .mk,.cmp-meta .ml,.about-stats .s b,.about-stats .s span,.quote .who b,.quote .who span,.btn,.login,.navlinks a,.foot-top a,.foot-top h4,.strip div,.micro span';
+1579:  var targetPh=null;
+1580:
+1581:  function setEditable(on){
+1582:    document.querySelectorAll(SEL).forEach(function(el){
+1583:      if(on){el.setAttribute('contenteditable','true');el.setAttribute('spellcheck','false');}
+1584:      else{el.removeAttribute('contenteditable');el.removeAttribute('spellcheck');}
+1585:    });
+1586:  }
+1587:  function enter(){body.classList.add('editing');setEditable(true);editlbl.textContent='Clique nos textos e fotos para editar';}
+1588:  function exit(){body.classList.remove('editing');setEditable(false);editlbl.textContent='Modo de edição';if(window.getSelection){window.getSelection().removeAllRanges();}}
+1589:  btnEdit.onclick=enter;
+1590:  btnDone.onclick=exit;
+1591:
+1592:  document.addEventListener('click',function(e){
+1593:    if(!body.classList.contains('editing'))return;
+1594:    if(e.target.closest('#editbar'))return;
+1595:    var a=e.target.closest('a');
+1596:    if(a)e.preventDefault();
+1597:    var ph=e.target.closest('.ph');
+1598:    if(ph){targetPh=ph;imgInput.value='';imgInput.click();}
+1599:  });
+1600:
+1601:  imgInput.addEventListener('change',function(){
+1602:    var f=imgInput.files&&imgInput.files[0];
+1603:    if(!f||!targetPh)return;
+1604:    var r=new FileReader();
+1605:    r.onload=function(){
+1606:      var img=targetPh.querySelector('img');
+1607:      if(!img){img=document.createElement('img');targetPh.appendChild(img);}
+1608:      img.setAttribute('src',r.result);
+1609:      img.removeAttribute('onerror');
+1610:      var fb=targetPh.querySelector('.fb');
+1611:      if(fb)fb.style.display='none';
+1612:    };
+1613:    r.readAsDataURL(f);
+1614:  });
+1615:
+1616:  btnExport.onclick=function(){
+1617:    var wasEditing=body.classList.contains('editing');
+1618:    if(wasEditing)exit();
+1619:    var clone=document.documentElement.cloneNode(true);
+1620:    clone.querySelectorAll('[contenteditable]').forEach(function(el){el.removeAttribute('contenteditable');});
+1621:    clone.querySelectorAll('[spellcheck]').forEach(function(el){el.removeAttribute('spellcheck');});
+1622:    var html='<!DOCTYPE html>\n'+clone.outerHTML;
+1623:    var blob=new Blob([html],{type:'text/html'});
+1624:    var url=URL.createObjectURL(blob);
+1625:    var a=document.createElement('a');
+1626:    a.href=url;a.download='libra-admin.html';document.body.appendChild(a);a.click();
+1627:    setTimeout(function(){URL.revokeObjectURL(url);a.remove();},1200);
+1628:    if(wasEditing)enter();
+1629:  };
+1630:})();
+1631:</script>
+1632:<script>
+1633:window.__initCarousel=function(){
+1634:  var track=document.getElementById('track');if(!track)return;
+1635:  var n=track.children.length;
+1636:  var dotsWrap=document.getElementById('cdots');
+1637:  var prev=document.getElementById('cprev');
+1638:  var next=document.getElementById('cnext');
+1639:  var i=0,dots=[];
+1640:  if(dotsWrap)dotsWrap.innerHTML='';
+1641:  for(var k=0;k<n;k++){(function(k){
+1642:    var d=document.createElement('button');
+1643:    d.className='cdot'+(k===0?' active':'');
+1644:    d.setAttribute('aria-label','Ir para depoimento '+(k+1));
+1645:    d.onclick=function(){go(k);};
+1646:    if(dotsWrap){dotsWrap.appendChild(d);dots.push(d);}
+1647:  })(k);}
+1648:  function go(m){i=(m+n)%n;var vs=track.querySelectorAll('video');for(var q=0;q<vs.length;q++){if(!vs[q].paused)vs[q].pause();}track.style.transform='translateX(-'+(i*100)+'%)';for(var j=0;j<dots.length;j++){dots[j].classList.toggle('active',j===i);}}
+1649:  if(prev)prev.onclick=function(){go(i-1);};
+1650:  if(next)next.onclick=function(){go(i+1);};
+
+===== 2105-2508 =====
+2105:(function(){
+2106:  function val(id){var e=document.getElementById(id);return e?(e.value||'').trim():'';}
+2107:  function txt(id){var e=document.getElementById(id);return e?(e.textContent||'').trim():'';}
+2108:  function endpoint(){var m=document.getElementById('lead-endpoint');return m?(m.getAttribute('content')||'').trim():'';}
+2109:  function salvaLocal(reg){
+2110:    try{
+2111:      var arr=JSON.parse(localStorage.getItem('libra_leads')||'[]');
+2112:      arr.push(reg);
+2113:      if(arr.length>500)arr=arr.slice(-500);
+2114:      localStorage.setItem('libra_leads',JSON.stringify(arr));
+2115:    }catch(e){}
+2116:  }
+2117:  function envia(reg){
+2118:    var url=endpoint(); if(!url)return;
+2119:    try{
+2120:      fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(reg)}).catch(function(){});
+2121:    }catch(e){}
+2122:  }
+2123:  window.__lead=function(tipo){
+2124:    var dados={};
+2125:    if(tipo==='simulacao'){
+2126:      var urg=document.querySelector('[data-urg].sel');
+2127:      dados={
+2128:        nome:val('sim-nome'), tel:val('sim-tel'), email:val('sim-email'),
+2129:        imovel:val('sim-imovel'), credito:val('sim-final')||val('sim-amount'),
+2130:        prazo:val('sim-prazo'), cidade:val('sim-cidade'),
+2131:        parcela:txt('sim-parcela'), urgencia:urg?(urg.getAttribute('data-urg')||''):''
+2132:      };
+2133:    }else{
+2134:      document.querySelectorAll('.pform .pfield').forEach(function(f){
+2135:        var l=f.querySelector('label'), i=f.querySelector('input,select');
+2136:        if(l&&i)dados[l.textContent.trim()]=(i.value||'').trim();
+2137:      });
+2138:    }
+2139:    var reg={tipo:tipo,quando:new Date().toISOString(),dados:dados};
+2140:    salvaLocal(reg); envia(reg);
+2141:    if(window.__leadsRefresh)window.__leadsRefresh();
+2142:  };
+2143:})();
+2144:</script>
+2145:<script data-admin="">
+2146:/* ===== Slots de video (home + depoimento) ===== */
+2147:(function(){
+2148:  var inp=document.createElement('input');
+2149:  inp.type='file';inp.accept='video/mp4,video/webm';inp.style.display='none';
+2150:  document.body.appendChild(inp);
+2151:  var alvo=null;
+2152:  function ytId(u){
+2153:    var m=(u||'').match(/(?:youtube(?:-nocookie)?\.com\/(?:watch\?[^#]*v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/);
+2154:    return m?m[1]:null;
+2155:  }
+2156:  function aplica(shell,src){
+2157:    var v=shell.querySelector('video');if(!v)return;
+2158:    var fr=shell.querySelector('iframe');if(fr)fr.remove();
+2159:    var id=ytId(src);
+2160:    if(id){
+2161:      v.removeAttribute('src');v.hidden=true;
+2162:      var ifr=document.createElement('iframe');
+2163:      ifr.src='https://www.youtube.com/embed/'+id+'?rel=0';
+2164:      ifr.title='V\u00eddeo da Libra';
+2165:      ifr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+2166:      ifr.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+2167:      ifr.setAttribute('allowfullscreen','');
+2168:      ifr.setAttribute('loading','lazy');
+2169:      shell.appendChild(ifr);
+2170:      shell.removeAttribute('data-empty');var sy=shell.closest('.vsec');if(sy)sy.removeAttribute('data-empty');
+2171:    }
+2172:    else if(src){v.src=src;v.hidden=false;shell.removeAttribute('data-empty');var s=shell.closest('.vsec');if(s)s.removeAttribute('data-empty');}
+2173:    else{v.removeAttribute('src');v.hidden=true;shell.setAttribute('data-empty','1');var s2=shell.closest('.vsec');if(s2)s2.setAttribute('data-empty','1');}
+2174:  }
+2175:  document.addEventListener('click',function(e){
+2176:    if(!document.body.classList.contains('editing'))return;
+2177:    var shell=e.target.closest('[data-vslot]');
+2178:    if(!shell)return;
+2179:    e.preventDefault();
+2180:    var r=prompt('V\u00eddeo desta se\u00e7\u00e3o:\n\n\u2022 Cole o link do YouTube (ou de um .mp4) e d\u00ea OK\n\u2022 Deixe em branco e d\u00ea OK pra escolher um arquivo do computador\n\u2022 Digite "remover" pra tirar o v\u00eddeo');
+2181:    if(r===null)return;
+2182:    r=(r||'').trim();
+2183:    if(r.toLowerCase()==='remover'){aplica(shell,'');return;}
+2184:    if(r){aplica(shell,r);alert('V\u00eddeo aplicado! Use "Salvar admin" pra salvar.');return;}
+2185:    alvo=shell;inp.value='';inp.click();
+2186:  });
+2187:  inp.addEventListener('change',function(){
+2188:    var f=inp.files&&inp.files[0];if(!f||!alvo)return;
+2189:    var mb=f.size/1048576;
+2190:    if(mb>15&&!confirm('Esse v\u00eddeo tem '+mb.toFixed(1)+' MB \u2014 vai deixar o site pesado. Recomendo .mp4 de at\u00e9 ~10 MB. Usar mesmo assim?')){alvo=null;return;}
+2191:    var rd=new FileReader();
+2192:    rd.onload=function(){aplica(alvo,rd.result);alvo=null;alert('V\u00eddeo aplicado! Use "Salvar admin" pra salvar com o v\u00eddeo embutido.');};
+2193:    rd.readAsDataURL(f);
+2194:  });
+2195:})();
+2196:
+2197:/* ===== Editor de colagem das politicas ===== */
+2198:(function(){
+2199:  var modal=document.getElementById('polmodal');
+2200:  if(!modal)return;
+2201:  var ta=document.getElementById('polta'), alvo=null;
+2202:  function open(t){alvo=t;ta.value=t.getAttribute('data-raw')||'';modal.hidden=false;document.body.style.overflow='hidden';setTimeout(function(){ta.focus();},60);}
+2203:  function close(){modal.hidden=true;document.body.style.overflow='';alvo=null;}
+2204:  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+2205:  var NUM=/^\d+(\.\d+)*[\.\)]\s+/, BUL=/^[-\u2013\u2014\u2022*\u00b7]\s*/;
+2206:  function capsish(l){return l===l.toUpperCase()&&/[A-Z\u00c1\u00c9\u00cd\u00d3\u00da\u00c2\u00ca\u00d4\u00c3\u00d5\u00c7]/.test(l);}
+2207:  function tituloSolto(l){return l.length<=70&&l.split(/\s+/).length<=6&&!/[\.,;]$/.test(l);}
+2208:  function formata(txt,tituloPagina){
+2209:    var lines=txt.replace(/\r/g,'').split('\n'), blocks=[], cur=[];
+2210:    for(var i=0;i<lines.length;i++){var l=lines[i].trim();if(l===''){if(cur.length){blocks.push(cur);cur=[];}}else cur.push(l);}
+2211:    if(cur.length)blocks.push(cur);
+2212:    var html='';
+2213:    for(var b=0;b<blocks.length;b++){
+2214:      var blk=blocks[b];
+2215:      if(b===0&&blk.length===1&&blk[0].toLowerCase().indexOf(tituloPagina)>-1){continue;}
+2216:      var allBul=blk.every(function(l){return BUL.test(l);});
+2217:      var allNum=blk.length>1&&blk.every(function(l){return NUM.test(l);});
+2218:      if(allBul){html+='<ul>'+blk.map(function(l){return '<li>'+esc(l.replace(BUL,''))+'</li>';}).join('')+'</ul>';continue;}
+2219:      if(allNum){html+='<ol>'+blk.map(function(l){return '<li>'+esc(l.replace(NUM,''))+'</li>';}).join('')+'</ol>';continue;}
+2220:      var first=blk[0], head=null, resto=blk;
+2221:      if((NUM.test(first)&&first.length<=90)||(capsish(first)&&first.length<=90)){head=first;resto=blk.slice(1);}
+2222:      else if(blk.length===1&&(tituloSolto(first)||capsish(first))){head=first;resto=[];}
+2223:      if(head)html+='<h2>'+esc(head)+'</h2>';
+2224:      if(resto.length){
+2225:        var ps=[],pc=[];
+2226:        for(var r=0;r<resto.length;r++){
+2227:          if(BUL.test(resto[r])){if(pc.length){ps.push('<p>'+esc(pc.join(' '))+'</p>');pc=[];}var lis=[];while(r<resto.length&&BUL.test(resto[r])){lis.push('<li>'+esc(resto[r].replace(BUL,''))+'</li>');r++;}r--;ps.push('<ul>'+lis.join('')+'</ul>');}
+2228:          else pc.push(resto[r]);
+2229:        }
+2230:        if(pc.length)ps.push('<p>'+esc(pc.join(' '))+'</p>');
+2231:        html+=ps.join('');
+2232:      }
+2233:    }
+2234:    return html;
+2235:  }
+2236:  document.addEventListener('click',function(e){
+2237:    var b=e.target.closest('[data-polpaste]');
+2238:    if(b){e.preventDefault();var art=b.closest('.artbody');if(art)open(art);return;}
+2239:    var r=e.target.closest('.doc-reedit a');
+2240:    if(r){e.preventDefault();var art2=r.closest('.artbody');if(art2)open(art2);return;}
+2241:    var c=e.target.closest('#polmodal [data-polmodal-close]');
+2242:    if(c){e.preventDefault();close();return;}
+2243:    var ap=e.target.closest('#polapply');
+2244:    if(ap){e.preventDefault();
+2245:      if(!alvo)return;
+2246:      var raw=ta.value.trim();
+2247:      if(!raw){ta.focus();return;}
+2248:      var pg=alvo.closest('main'), titulo=(pg&&pg.id==='pg-cookies')?'pol\u00edtica de cookies':'pol\u00edtica de privacidade';
+2249:      alvo.setAttribute('data-raw',raw);
+2250:      alvo.innerHTML=formata(raw,titulo)+'<p class="doc-reedit"><a href="#">\u270e Substituir texto (vis\u00edvel no modo de edi\u00e7\u00e3o)</a></p>';
+2251:      close();
+2252:    }
+2253:  });
+2254:  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();});
+2255:})();
+2256:</script>
+2257:<script data-admin="">
+2258:/* ===== painel admin ===== */
+2259:(function(){
+2260:  function $(id){return document.getElementById(id);}
+2261:  function flash(id,m,err){var e=$(id);if(!e)return;e.textContent=m;e.hidden=false;e.classList.toggle('err',!!err);clearTimeout(e.__t);e.__t=setTimeout(function(){e.hidden=true;},4200);}
+2262:
+2263:  /* --- abas --- */
+2264:  document.querySelectorAll('.adm-tab').forEach(function(t){
+2265:    t.onclick=function(){
+2266:      document.querySelectorAll('.adm-tab').forEach(function(x){x.classList.toggle('on',x===t);});
+2267:      document.querySelectorAll('.adm-pane').forEach(function(p){p.classList.toggle('on',p.id==='admp-'+t.getAttribute('data-admtab'));});
+2268:      if(t.getAttribute('data-admtab')==='leads'&&window.__leadsRefresh)window.__leadsRefresh();
+2269:      if(t.getAttribute('data-admtab')==='blog')listaPosts();
+2270:    };
+2271:  });
+2272:
+2273:  /* --- blog: formatador (mesma lógica editorial das políticas) --- */
+2274:  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+2275:  var NUM=/^\d+(\.\d+)*[\.\)]\s+/, BUL=/^[-\u2013\u2014\u2022*\u00b7]\s*/;
+2276:  function capsish(l){return l===l.toUpperCase()&&/[A-Z\u00c1\u00c9\u00cd\u00d3\u00da\u00c2\u00ca\u00d4\u00c3\u00d5\u00c7]/.test(l);}
+2277:  function tituloSolto(l){return l.length<=70&&l.split(/\s+/).length<=8&&!/[\.,;:]$/.test(l);}
+2278:  function formata(txt){
+2279:    var lines=txt.replace(/\r/g,'').split('\n'), blocks=[], cur=[];
+2280:    for(var i=0;i<lines.length;i++){var l=lines[i].trim();if(l===''){if(cur.length){blocks.push(cur);cur=[];}}else cur.push(l);}
+2281:    if(cur.length)blocks.push(cur);
+2282:    var html='';
+2283:    for(var b=0;b<blocks.length;b++){
+2284:      var blk=blocks[b];
+2285:      var allBul=blk.every(function(l){return BUL.test(l);});
+2286:      var allNum=blk.length>1&&blk.every(function(l){return NUM.test(l);});
+2287:      if(allBul){html+='<ul>'+blk.map(function(l){return '<li>'+esc(l.replace(BUL,''))+'</li>';}).join('')+'</ul>';continue;}
+2288:      if(allNum){html+='<ol>'+blk.map(function(l){return '<li>'+esc(l.replace(NUM,''))+'</li>';}).join('')+'</ol>';continue;}
+2289:      var first=blk[0], head=null, resto=blk;
+2290:      if(blk.length>1&&(capsish(first)||tituloSolto(first))&&first.length<=90){head=first;resto=blk.slice(1);}
+2291:      else if(blk.length===1&&(capsish(first)||(tituloSolto(first)&&first.length<=60))){head=first;resto=[];}
+2292:      if(head)html+='<h2>'+esc(head)+'</h2>';
+2293:      if(resto.length){
+2294:        var ps=[],pc=[];
+2295:        for(var r=0;r<resto.length;r++){
+2296:          if(BUL.test(resto[r])){if(pc.length){ps.push('<p>'+esc(pc.join(' '))+'</p>');pc=[];}var lis=[];while(r<resto.length&&BUL.test(resto[r])){lis.push('<li>'+esc(resto[r].replace(BUL,''))+'</li>');r++;}r--;ps.push('<ul>'+lis.join('')+'</ul>');}
+2297:          else pc.push(resto[r]);
+2298:        }
+2299:        if(pc.length)ps.push('<p>'+esc(pc.join(' '))+'</p>');
+2300:        html+=ps.join('');
+2301:      }
+2302:    }
+2303:    return html;
+2304:  }
+2305:  function slugify(s){
+2306:    return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+2307:      .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,50)||('post-'+Date.now());
+2308:  }
+2309:
+2310:  var imgData='';
+2311:  var bpImg=$('bp-img');
+2312:  if(bpImg)bpImg.addEventListener('change',function(){
+2313:    var f=this.files&&this.files[0]; imgData='';
+2314:    if(!f)return;
+2315:    var r=new FileReader();
+2316:    r.onload=function(){imgData=r.result;};
+2317:    r.readAsDataURL(f);
+2318:  });
+2319:
+2320:  function publicar(){
+2321:    var titulo=$('bp-titulo').value.trim(), cat=$('bp-cat').value.trim()||'Blog',
+2322:        resumo=$('bp-resumo').value.trim(), sub=$('bp-sub').value.trim(),
+2323:        leitura=$('bp-leitura').value.trim()||'4 min', corpo=$('bp-corpo').value.trim();
+2324:    if(!titulo||!corpo){flash('bp-msg','Preencha pelo menos o título e o conteúdo.',true);return;}
+2325:    var slug=slugify(titulo), pid='artigo-'+slug;
+2326:    if(document.getElementById('pg-'+pid)){flash('bp-msg','Já existe um post com esse título — mude um pouquinho o título.',true);return;}
+2327:
+2328:    /* card no blog */
+2329:    var grid=document.querySelector('#pg-blog .pgrid');
+2330:    var card=document.createElement('a');
+2331:    card.className='blogcard'; card.href='#'; card.setAttribute('data-page',pid);
+2332:    var bg=imgData?' style="background:url('+imgData+') center/cover"':'';
+2333:    card.innerHTML='<div class="bimg"'+bg+'><span class="cat">'+esc(cat)+'</span></div><div class="bbody"><h3>'+esc(titulo)+'</h3><p>'+esc(resumo||sub||'')+'</p><span class="rd">Ler artigo →</span></div>';
+2334:    grid.insertBefore(card,grid.firstChild);
+2335:
+2336:    /* página do artigo */
+2337:    var pg=document.createElement('main');
+2338:    pg.id='pg-'+pid; pg.className='page'; pg.hidden=true;
+2339:    pg.innerHTML=
+2340:      '<section class="phero"><div class="wrap"><div class="artwrap" style="max-width:52rem">'+
+2341:      '<span class="eyebrow light">Blog</span>'+
+2342:      '<h1 class="serif" style="font-size:clamp(32px,4.6vw,56px)">'+esc(titulo)+'</h1>'+
+2343:      (sub?'<p>'+esc(sub)+'</p>':'')+
+2344:      '</div></div></section>'+
+2345:      '<section class="sec sec--cream"><div class="wrap"><div class="artwrap">'+
+2346:      '<a class="artback" href="#" data-page="blog">← Voltar ao blog</a>'+
+2347:      '<div class="artmeta"><span class="cat">'+esc(cat)+'</span><span>Leitura de '+esc(leitura)+'</span></div>'+
+2348:      '<div class="artbody">'+formata(corpo)+'</div>'+
+2349:      '<div class="artcta"><h3>Que tal ver isso na prática?</h3>'+
+2350:      '<p>Faça uma simulação gratuita e descubra em minutos quanto o seu imóvel pode oferecer.</p>'+
+2351:      '<a class="btn btn-gold" href="#" data-page="simular">Simular meu crédito <span class="ar">→</span></a></div>'+
+2352:      '</div></div></section>';
+2353:    var ref=document.getElementById('pg-privacidade');
+2354:    ref.parentNode.insertBefore(pg,ref);
+2355:
+2356:    if(window.__buildBlogFilters)window.__buildBlogFilters();
+2357:    ['bp-titulo','bp-cat','bp-resumo','bp-sub','bp-corpo'].forEach(function(id){$(id).value='';});
+2358:    if(bpImg)bpImg.value=''; imgData='';
+2359:    listaPosts();
+2360:    flash('bp-msg','Post publicado! Confira no blog e depois use “Salvar admin” pra guardar no arquivo.');
+2361:  }
+2362:  var bpub=$('bp-publicar'); if(bpub)bpub.onclick=function(e){e.preventDefault();publicar();};
+2363:
+2364:  function listaPosts(){
+2365:    var box=$('bp-lista'); if(!box)return;
+2366:    box.innerHTML='';
+2367:    var cards=document.querySelectorAll('#pg-blog .blogcard');
+2368:    if(!cards.length){box.innerHTML='<div class="adm-empty">Nenhum post ainda.</div>';return;}
+2369:    cards.forEach(function(cd){
+2370:      var oculto=cd.style.display==='none';
+2371:      var it=document.createElement('div'); it.className='adm-item';
+2372:      it.innerHTML='<span class="cat-pill">'+esc((cd.querySelector('.cat')||{}).textContent||'—')+'</span>'+
+2373:        '<span class="ttl">'+esc((cd.querySelector('h3')||{}).textContent||'—')+'</span>'+
+2374:        '<span class="st">'+(oculto?'Oculto':'Publicado')+'</span>';
+2375:      var bt=document.createElement('button');
+2376:      bt.textContent=oculto?'Publicar':'Ocultar';
+2377:      bt.onclick=function(){cd.style.display=oculto?'':'none';if(window.__buildBlogFilters)window.__buildBlogFilters();listaPosts();};
+2378:      var bx=document.createElement('button');
+2379:      bx.textContent='Excluir'; bx.className='danger';
+2380:      bx.onclick=function(){
+2381:        if(!confirm('Excluir este post e a página do artigo? Essa ação não tem desfazer.'))return;
+2382:        var pid=cd.getAttribute('data-page');
+2383:        var pg=pid?document.getElementById('pg-'+pid):null;
+2384:        if(pg)pg.remove();
+2385:        cd.remove();
+2386:        if(window.__buildBlogFilters)window.__buildBlogFilters();
+2387:        listaPosts();
+2388:      };
+2389:      it.appendChild(bt); it.appendChild(bx);
+2390:      box.appendChild(it);
+2391:    });
+2392:  }
+2393:  listaPosts();
+2394:
+2395:  /* --- leads --- */
+2396:  function leadsLocais(){try{return JSON.parse(localStorage.getItem('libra_leads')||'[]');}catch(e){return [];}}
+2397:  var remotos=[];
+2398:  function todos(){
+2399:    var seen={}, out=[];
+2400:    leadsLocais().concat(remotos).forEach(function(r){
+2401:      var k=(r.tipo||'')+'|'+(r.quando||'')+'|'+JSON.stringify(r.dados||{});
+2402:      if(seen[k])return; seen[k]=1; out.push(r);
+2403:    });
+2404:    out.sort(function(a,b){return (b.quando||'').localeCompare(a.quando||'');});
+2405:    return out;
+2406:  }
+2407:  function fdata(iso){
+2408:    var d=new Date(iso); if(isNaN(d))return iso||'—';
+2409:    return d.toLocaleDateString('pt-BR')+' '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+2410:  }
+2411:  function cel(v){return '<td>'+esc(String(v==null?'—':(v||'—')))+'</td>';}
+2412:  window.__leadsRefresh=function(){
+2413:    var arr=todos(), sims=[], pars=[];
+2414:    arr.forEach(function(r){(r.tipo==='simulacao'?sims:pars).push(r);});
+2415:    var hoje=new Date().toDateString();
+2416:    var nHoje=arr.filter(function(r){var d=new Date(r.quando);return !isNaN(d)&&d.toDateString()===hoje;}).length;
+2417:    $('lk-sim').textContent=sims.length; $('lk-par').textContent=pars.length; $('lk-hoje').textContent=nHoje;
+2418:    var tb=$('lt-sim'); tb.innerHTML='';
+2419:    sims.slice(0,60).forEach(function(r){var d=r.dados||{};
+2420:      tb.insertAdjacentHTML('beforeend','<tr>'+cel(fdata(r.quando))+cel(d.nome)+cel([d.tel,d.email].filter(Boolean).join(' · '))+cel(d.imovel)+cel(d.credito)+cel(d.prazo?d.prazo+' m':'')+cel(d.parcela)+cel(d.cidade)+'</tr>');
+2421:    });
+2422:    $('le-sim').style.display=sims.length?'none':'';
+2423:    var tp=$('lt-par'); tp.innerHTML='';
+2424:    pars.slice(0,60).forEach(function(r){var d=r.dados||{};
+2425:      tp.insertAdjacentHTML('beforeend','<tr>'+cel(fdata(r.quando))+cel(d['Nome completo'])+cel([d['Telefone / WhatsApp'],d['E-mail']].filter(Boolean).join(' · '))+cel(d['Tipo de parceiro'])+cel(d['Cidade / UF'])+'</tr>');
+2426:    });
+2427:    $('le-par').style.display=pars.length?'none':'';
+2428:  };
+2429:  window.__leadsRefresh();
+2430:
+2431:  var bat=$('ld-atualizar'); if(bat)bat.onclick=function(e){
+2432:    e.preventDefault();
+2433:    var m=document.getElementById('lead-endpoint');
+2434:    var url=m?(m.getAttribute('content')||'').trim():'';
+2435:    if(!url){flash('ld-msg','Configure primeiro o endereço de captura na aba “Exportar & Configurar”.',true);return;}
+2436:    flash('ld-msg','Buscando…');
+2437:    fetch(url).then(function(r){return r.json();}).then(function(arr){
+2438:      if(!Array.isArray(arr))throw 0;
+2439:      remotos=arr.map(function(r){return {tipo:r.tipo,quando:(r.quando&&new Date(r.quando).toISOString())||r.quando,dados:r.dados||{}};});
+2440:      window.__leadsRefresh();
+2441:      flash('ld-msg','Atualizado: '+remotos.length+' registro(s) do servidor.');
+2442:    }).catch(function(){flash('ld-msg','Não consegui ler o endpoint — confira a URL e a publicação do App da Web.',true);});
+2443:  };
+2444:  var bcsv=$('ld-csv'); if(bcsv)bcsv.onclick=function(e){
+2445:    e.preventDefault();
+2446:    var arr=todos();
+2447:    if(!arr.length){flash('ld-msg','Nada pra exportar ainda.',true);return;}
+2448:    function q(v){return '"'+String(v==null?'':v).replace(/"/g,'""')+'"';}
+2449:    var rows=['tipo;quando;nome;contato;detalhes'];
+2450:    arr.forEach(function(r){var d=r.dados||{};
+2451:      var nome=d.nome||d['Nome completo']||'';
+2452:      var contato=[d.tel||d['Telefone / WhatsApp'],d.email||d['E-mail']].filter(Boolean).join(' / ');
+2453:      rows.push([r.tipo,r.quando,nome,contato,JSON.stringify(d)].map(q).join(';'));
+2454:    });
+2455:    var blob=new Blob(['\ufeff'+rows.join('\n')],{type:'text/csv;charset=utf-8'});
+2456:    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='libra-leads.csv';document.body.appendChild(a);a.click();
+2457:    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},1200);
+2458:  };
+2459:  var blim=$('ld-limpar'); if(blim)blim.onclick=function(e){
+2460:    e.preventDefault();
+2461:    if(!confirm('Apagar os registros salvos neste navegador? (Os do servidor não são afetados.)'))return;
+2462:    localStorage.removeItem('libra_leads'); window.__leadsRefresh();
+2463:    flash('ld-msg','Registros locais apagados.');
+2464:  };
+2465:
+2466:  /* --- config endpoint --- */
+2467:  var meta=document.getElementById('lead-endpoint');
+2468:  var cfgIn=$('cfg-endpoint');
+2469:  if(cfgIn&&meta)cfgIn.value=meta.getAttribute('content')||'';
+2470:  var bcfg=$('cfg-salvar'); if(bcfg)bcfg.onclick=function(e){
+2471:    e.preventDefault();
+2472:    var url=(cfgIn.value||'').trim();
+2473:    if(url&&!/^https:\/\//.test(url)){flash('cfg-msg','A URL precisa começar com https://',true);return;}
+2474:    meta.setAttribute('content',url);
+2475:    flash('cfg-msg',url?'Endereço salvo! Ele vai junto na exportação de produção — lembre de usar “Salvar admin” pra fixar aqui também.':'Endereço removido.');
+2476:  };
+2477:
+2478:  /* --- exportar produção --- */
+2479:  var bex=$('ex-prod'); if(bex)bex.onclick=function(e){
+2480:    e.preventDefault();
+2481:    var clone=document.documentElement.cloneNode(true);
+2482:    clone.querySelectorAll('[data-admin]').forEach(function(el){el.remove();});
+2483:    clone.querySelectorAll('[contenteditable]').forEach(function(el){el.removeAttribute('contenteditable');});
+2484:    clone.querySelectorAll('[spellcheck]').forEach(function(el){el.removeAttribute('spellcheck');});
+2485:    /* estado limpo de navegação */
+2486:    clone.querySelectorAll('main.page').forEach(function(m){if(m.id==='pg-home')m.removeAttribute('hidden');else m.setAttribute('hidden','');});
+2487:    var bd=clone.querySelector('body'); if(bd)bd.className='';
+2488:    clone.querySelectorAll('[data-page]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-page')==='home');});
+2489:    /* remove CSS do editor/painel */
+2490:    var st=clone.querySelector('style');
+2491:    if(st)st.textContent=st.textContent.split('\n').filter(function(l){
+2492:      return !/#editbar|body\.editing|\.doc-reedit|\.polta|\.polrow|\.pmodal-card\.wide|barra de edi|--- editor/.test(l);
+2493:    }).join('\n');
+2494:    /* título + descrição de produção */
+2495:    var tt=clone.querySelector('title');
+2496:    if(tt)tt.textContent='Libra Crédito — Crédito com garantia de imóvel a partir de 1,19% a.m. + IPCA';
+2497:    var md=clone.querySelector('meta[name="description"]');
+2498:    if(!md){md=clone.ownerDocument.createElement('meta');md.setAttribute('name','description');tt.parentNode.insertBefore(md,tt.nextSibling);}
+2499:    md.setAttribute('content','Use o seu imóvel como garantia e pegue um crédito justo de verdade: a partir de 1,19% ao mês + IPCA, em até 180 meses, 100% online. Simule em minutos com a Libra Crédito.');
+2500:    var html='<!DOCTYPE html>\n'+clone.outerHTML;
+2501:    var blob=new Blob([html],{type:'text/html'});
+2502:    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='libra-site-producao.html';document.body.appendChild(a);a.click();
+2503:    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},1200);
+2504:    flash('ex-msg','Arquivo de produção gerado — é esse que vai pro servidor.');
+2505:  };
+2506:})();
+2507:</script>
+2508:</body></html>

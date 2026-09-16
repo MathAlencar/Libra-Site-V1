@@ -1,0 +1,15 @@
+pg-home
+pg-como
+pg-porque
+pg-sobre
+pg-parceiros
+pg-blog
+pg-simular
+pg-artigo-1
+pg-artigo-2
+pg-artigo-3
+pg-artigo-4
+pg-artigo-5
+pg-artigo-6
+pg-privacidade
+pg-cookies

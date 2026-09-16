@@ -5,6 +5,7 @@ import { ROUTES } from '@/lib/constants/routes'
 import {
   AdminPage,
   ALibraPage,
+  BlogArticlePage,
   BlogPage,
   ComoFuncionaPage,
   HomePage,
@@ -25,6 +26,7 @@ export const router = createBrowserRouter([
       { path: ROUTES.A_LIBRA, element: <ALibraPage /> },
       { path: ROUTES.PARCEIROS, element: <ParceirosPage /> },
       { path: ROUTES.BLOG, element: <BlogPage /> },
+      { path: '/blog/:slug', element: <BlogArticlePage /> },
       { path: ROUTES.SIMULACAO, element: <SimulacaoPage /> },
       {
         path: ROUTES.POLITICA_PRIVACIDADE,
